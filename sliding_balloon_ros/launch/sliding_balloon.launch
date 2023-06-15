@@ -1,0 +1,13 @@
+<launch>
+    <arg name="desired_direction_topic" default="desired_direction" />
+    <arg name="scan_topic" default="/scan" />
+    <arg name="corrected_direction_topic" default="~/corrected_direction" />
+    <arg name="advance_step" default="" />
+    <arg name="differential" default="" />
+    <arg name="frequency" default="" />
+    <arg name="processing_radius" default="" />
+    <arg name="debug" default="0" />
+    <node pkg="sliding_balloon_ros" type="sliding_balloon_node.py"
+        name="sliding_ballon_node" output="screen"
+        args="--desired_direction_topic $(arg desired_direction_topic) --scan_topic $(arg scan_topic) --corrected_direction_topic $(arg corrected_direction_topic) --advance_step $(arg advance_step) --differential $(arg differential) --frequency $(arg frequency) --processing_radius $(arg processing_radius) --debug $(arg debug) --rosargs" />
+</launch>
